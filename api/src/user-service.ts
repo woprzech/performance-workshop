@@ -1,4 +1,5 @@
 import {User} from "./app";
+import {UserRepository} from "./user-repository";
 
 const memory = [];
 
@@ -9,11 +10,13 @@ export async function saveUser(user: User) {
 }
 
 export class UserService {
-    private static myUsers: User[];
+    private repository: UserRepository;
+    constructor() {
+        this.repository = new UserRepository();
+    }
 
-    static saveUser(user: User) {
-        console.log('saveUser', user);
-        this.myUsers.push(user);
+    saveUser(user: User) {
+        return this.repository.save(user);
     }
 
 }

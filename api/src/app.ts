@@ -28,11 +28,12 @@ export class User {
     }
 
 }
+const userService = new UserService();
 
 router.post('/person', async (req, res) => {
     Logger.info('post /person', req.body);
 
-    await UserService.saveUser(new User(req.body));
+    userService.saveUser(new User(req.body)); // we do not have to wait for that save
 
     res.sendStatus(200);
 });
