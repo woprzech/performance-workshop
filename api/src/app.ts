@@ -32,14 +32,6 @@ export class User {
 router.post('/person', async (req, res) => {
     Logger.info('post /person', req.body);
 
-    await saveUser(new User(req.body));
-
-    res.sendStatus(200);
-});
-
-router.post('/service-person', async (req, res) => {
-    Logger.info('post /person', req.body);
-
     await UserService.saveUser(new User(req.body));
 
     res.sendStatus(200);

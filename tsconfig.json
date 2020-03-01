@@ -5,7 +5,8 @@
       "esnext"
     ],
     "target": "es2019",
-    "rootDirs": ["./src", "./__tests__"],
+    "rootDirs": [
+      "./api/src", "./__tests__"],
     "noImplicitAny": true,
     "sourceMap": true,
     "moduleResolution": "node",
@@ -13,7 +14,7 @@
   },
 
   "include": [
-    "src"
+    "api/src"
   ],
 
   "exclude": [

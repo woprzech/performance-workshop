@@ -9,11 +9,11 @@ export async function saveUser(user: User) {
 }
 
 export class UserService {
-    private static memory: User[];
+    private static myUsers: User[];
 
     static saveUser(user: User) {
         console.log('saveUser', user);
-        this.memory.push(user);
+        this.myUsers.push(user);
     }
 
 }
